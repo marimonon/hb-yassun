@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef, FC } from "react"
+import { useState, useEffect, FC } from "react"
 import { useReward } from "react-rewards"
 // import { setInterval } from "timers"
 import reactLogo from "./assets/react.svg"
 import viteLogo from "/vite.svg"
 import "./App.css"
+import Confetti from "./components/Confetti"
 
 const App: FC = () => {
   const { reward, isAnimating } = useReward("rewardId", "confetti")
@@ -43,7 +44,7 @@ const App: FC = () => {
       <p>{countDown} 回目</p>
       <div className="card">
         <button disabled={isAnimating} onClick={handleClick}>
-          <span id="rewardId" />
+          <Confetti />
           Age is {count}
         </button>
         <p>
