@@ -7,4 +7,25 @@
   height: 100vh;
   background-image: url(./assets/yassun.png);
   background-color: #89213b;
+  animation : yassun 8s infinite;
+}
+
+@keyframes yassun {
+  0% {
+    background-color: #89213b;
+    transform: scale(1);
+  }
+  43% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.1);
+  }
+  50% {
+    background-color: #F2A05B;
+    transform: scale(1);
+  }
+  100% {
+    background-color: #89213b;
+  }
 }
