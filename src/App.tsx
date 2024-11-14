@@ -1,21 +1,23 @@
-import { useState, useEffect, FC } from "react"
-import { useReward } from "react-rewards"
+import { useState, FC } from "react"
 // import { setInterval } from "timers"
 import reactLogo from "./assets/react.svg"
 import viteLogo from "/vite.svg"
 import "./App.css"
 import Confetti from "./components/Confetti"
 
+const maxAge = 2 //17
+const maxCountDown = 2 //21
+
 const App: FC = () => {
   const [count, setCount] = useState(0)
   const [countDown, setCountDown] = useState(0)
-  const birthday = countDown === 21
+  const birthday = countDown === maxCountDown
 
   const handleClick = () => {
-    if (count < 17) {
+    if (count < maxAge) {
       setCount(count + 1)
     } else {
-      if (countDown < 21) {
+      if (countDown < maxCountDown) {
         setCountDown(countDown + 1)
       }
     }
