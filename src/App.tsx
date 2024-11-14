@@ -7,16 +7,9 @@ import "./App.css"
 import Confetti from "./components/Confetti"
 
 const App: FC = () => {
-  const { reward, isAnimating } = useReward("rewardId", "confetti")
   const [count, setCount] = useState(0)
   const [countDown, setCountDown] = useState(0)
-  const [birthday, setBirthday] = useState(false)
-
-  useEffect(() => {
-    if (isAnimating) {
-      reward()
-    }
-  }, [isAnimating])
+  const birthday = countDown === 21
 
   const handleClick = () => {
     if (count < 17) {
@@ -24,9 +17,6 @@ const App: FC = () => {
     } else {
       if (countDown < 21) {
         setCountDown(countDown + 1)
-      } else {
-        setBirthday(true)
-        console.log(birthday)
       }
     }
   }
@@ -43,10 +33,8 @@ const App: FC = () => {
       <h1>Vite + React 11.14</h1>
       <p>{countDown} 回目</p>
       <div className="card">
-        <button disabled={isAnimating} onClick={handleClick}>
-          <Confetti />
-          Age is {count}
-        </button>
+        {birthday && <Confetti />}
+        <button onClick={handleClick}>Age is {count}</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
