@@ -6,8 +6,8 @@ import Confetti from "./components/Confetti"
 import Cake from "./components/Cake"
 import Yassun from "./components/Yassun"
 
-const maxAge = 2 //17
-const maxCountDown = 2 //21
+const maxAge = 17 //17
+const maxCountDown = 21 //21
 
 const App: FC = () => {
   const [count, setCount] = useState(0)
@@ -33,7 +33,7 @@ const App: FC = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React 11.14</h1>
+      <h1>{birthday ? "Happy Birthday!" : "Vite + React"} 11.14</h1>
       <p>{countDown} 回目</p>
       <div className="card">
         {birthday && <Confetti />}
