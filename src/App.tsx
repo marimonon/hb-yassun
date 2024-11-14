@@ -25,7 +25,9 @@ function App() {
             if (count < 17) {
               setCount(count + 1)
             } else {
-              setCountDown(countDown + 1)
+              if (countDown < 21) {
+                setCountDown(countDown + 1)
+              }
             }
           }}
         >
