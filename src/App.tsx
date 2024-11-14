@@ -1,5 +1,6 @@
-import { useState, FC } from "react"
+import { useState, useEffect, useRef, FC } from "react"
 import { useReward } from "react-rewards"
+// import { setInterval } from "timers"
 import reactLogo from "./assets/react.svg"
 import viteLogo from "/vite.svg"
 import "./App.css"
@@ -10,6 +11,24 @@ export const App: FC = () => {
   const [countDown, setCountDown] = useState(0)
   const [birthday, setBirthday] = useState(false)
 
+  useEffect(() => {
+    if (birthday) {
+      reward()
+    }
+  }, [isAnimating])
+
+  const handleClick = () => {
+    if (count < 17) {
+      setCount(count + 1)
+    } else {
+      if (countDown < 21) {
+        setCountDown(countDown + 1)
+      } else {
+        setBirthday(true)
+        console.log(birthday)
+      }
+    }
+  }
   return (
     <>
       <div>
@@ -20,25 +39,11 @@ export const App: FC = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React 11.14</h1>
       <p>{countDown} 回目</p>
       <div className="card">
-        <button disabled={isAnimating} onClick={reward}>
+        <button disabled={isAnimating} onClick={handleClick}>
           <span id="rewardId" />
-          🎉
-        </button>
-        <button
-          disabled={isAnimating}
-          onClick={() => {
-            if (count < 17) {
-              setCount(count + 1)
-            } else {
-              if (countDown < 21) {
-                setCountDown(countDown + 1)
-              }
-            }
-          }}
-        >
           Age is {count}
         </button>
         <p>
