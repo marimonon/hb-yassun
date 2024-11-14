@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  text-shadow: #000 1px 0 10px;
 }
 
 .logo {
