@@ -1,9 +1,9 @@
 import { useState, FC } from "react"
-// import { setInterval } from "timers"
 import reactLogo from "./assets/react.svg"
 import viteLogo from "/vite.svg"
 import "./App.css"
 import Confetti from "./components/Confetti"
+import Cake from "./components/Cake"
 
 const maxAge = 2 //17
 const maxCountDown = 2 //21
@@ -38,12 +38,13 @@ const App: FC = () => {
         {birthday && <Confetti />}
         <button onClick={handleClick}>Age is {count}</button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Edit <code>src/App.tsx</code> and save to test HappyBirthday
         </p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      {birthday && <Cake />}
     </>
   )
 }
