@@ -21,7 +21,13 @@ function App() {
       <p>{countDown} 回目</p>
       <div className="card">
         <button
-          onClick={() => setCount((count) => (count < 17 ? count + 1 : count))}
+          onClick={() => {
+            if (count < 17) {
+              setCount(count + 1)
+            } else {
+              setCountDown(countDown + 1)
+            }
+          }}
         >
           Age is {count}
         </button>
