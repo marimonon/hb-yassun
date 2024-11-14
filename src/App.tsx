@@ -5,14 +5,14 @@ import reactLogo from "./assets/react.svg"
 import viteLogo from "/vite.svg"
 import "./App.css"
 
-export const App: FC = () => {
+const App: FC = () => {
   const { reward, isAnimating } = useReward("rewardId", "confetti")
   const [count, setCount] = useState(0)
   const [countDown, setCountDown] = useState(0)
   const [birthday, setBirthday] = useState(false)
 
   useEffect(() => {
-    if (birthday) {
+    if (isAnimating) {
       reward()
     }
   }, [isAnimating])
