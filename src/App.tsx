@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useState, FC } from "react"
+import { useReward } from "react-rewards"
 import reactLogo from "./assets/react.svg"
 import viteLogo from "/vite.svg"
 import "./App.css"
 
-function App() {
+export const App: FC = () => {
+  const { reward, isAnimating } = useReward("rewardId", "confetti")
   const [count, setCount] = useState(0)
   const [countDown, setCountDown] = useState(0)
   const [birthday, setBirthday] = useState(false)
@@ -21,7 +23,12 @@ function App() {
       <h1>Vite + React</h1>
       <p>{countDown} 回目</p>
       <div className="card">
+        <button disabled={isAnimating} onClick={reward}>
+          <span id="rewardId" />
+          🎉
+        </button>
         <button
+          disabled={isAnimating}
           onClick={() => {
             if (count < 17) {
               setCount(count + 1)
