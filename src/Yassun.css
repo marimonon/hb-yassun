@@ -1,0 +1,10 @@
+.yassun {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./assets/yassun.png);
+  background-color: #89213b;
+}

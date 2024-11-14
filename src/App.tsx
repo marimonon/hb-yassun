@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg"
 import "./App.css"
 import Confetti from "./components/Confetti"
 import Cake from "./components/Cake"
+import Yassun from "./components/Yassun"
 
 const maxAge = 2 //17
 const maxCountDown = 2 //21
@@ -45,6 +46,7 @@ const App: FC = () => {
         Click on the Vite and React logos to learn more
       </p>
       {birthday && <Cake />}
+      {birthday && <Yassun />}
     </>
   )
 }
