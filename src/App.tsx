@@ -5,6 +5,7 @@ import "./App.css"
 
 function App() {
   const [count, setCount] = useState(0)
+  const [countDown, setCountDown] = useState(0)
 
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <p>{countDown} 回目</p>
       <div className="card">
         <button
           onClick={() => setCount((count) => (count < 17 ? count + 1 : count))}
